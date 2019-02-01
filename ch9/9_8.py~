@@ -1,0 +1,28 @@
+
+def is_palindrome(word):
+
+
+    if len(word) == 0 or len(word) == 1:
+        print("Palindrome")
+        return True
+    elif word[0] != word[-1]:
+        print("False")
+        return False
+    else:
+        print("trying", word[1:-1])
+        is_palindrome(word[1:-1])
+ 
+"""
+for i in range(10000):
+    if is_palindrome(str(i)):
+        print(i)
+"""
+
+str1 = str(9999)
+str2 = str(9989)
+
+
+#print(is_palindrome(str1))
+print(is_palindrome(str2))
+
+

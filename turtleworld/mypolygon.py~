@@ -1,0 +1,107 @@
+import math
+from swampy.TurtleWorld import *
+
+world = TurtleWorld()
+bob = Turtle()
+print bob
+
+bob.delay = 0.01
+
+def square(t, length):
+    for i in range(4):
+        fd(t, length)
+        lt(t)
+    return
+
+def polygon(t, length,n):
+
+    angle = 360/n
+    for i in range(n):
+        fd(t, length)
+        lt(t,angle)
+    return
+
+def circle(t, r):
+    c = 2*math.pi*r
+    n = 360
+    length = c/n
+    polygon(t, length, n)
+    return
+
+
+
+def my_arc(t, r, angle):
+    arcLen = 2*math.pi*r*angle/360
+    n = int(arcLen/3)+1
+    sideLength = arcLen/n
+    sideAngle = float(angle)/n
+
+    for i in range(n):
+        fd(t, sideLength)
+        lt(t, sideAngle)
+    return
+
+
+def polyline(t, n, length, angle):
+    for i in range(n):
+        fd(t, length)
+        lt(t, angle)
+    return
+
+
+
+
+def arc(t, r, angle):
+    #from thinkpython.org
+
+    arc_length= 2 * math.pi * r * abs(angle) / 360
+    n = int(arc_length / 4) + 1
+    step_length = arc_length / n
+    step_angle = float(angle) / n
+    
+    #making a slight left turn before starting reduces the error caused by the linear approximation of the arc
+
+    lt(t, step_angle / 2)
+    polyline(t, n, step_length, step_angle)
+    rt(t, step_angle / 2)
+    return
+
+
+def leaf(t, r, angle):
+    for i in [0, 1]:
+        arc(t, r, angle)
+        lt(t, 180-angle)
+    return
+
+
+def flower(t, n, r, angle):
+    for i in range(n):
+        petal(t, r, angle)
+        lt(t, 360.0/n)
+    return
+
+def move(t, l):
+    pu(t)
+    fd(t, l)
+    pd(t)
+    return
+
+move(bob, -100)
+flower(bob, 7, 60.0, 60.0)
+
+move(bob, 100)
+flower(bob, 10, 40.0, 80.0)
+
+move(bob, 100)
+flower(bob, 20, 140.0, 20.0)
+
+
+
+#MAIN
+
+#square(bob, 200)
+#polygon(bob, 50, 15)
+#arc(bob, 50, 90)
+wait_for_user()
+
+

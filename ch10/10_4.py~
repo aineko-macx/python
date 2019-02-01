@@ -1,0 +1,8 @@
+def middle(list):
+    list.pop(0)
+    list.pop()
+    return list
+
+
+
+print(middle([1,2,3,4]))

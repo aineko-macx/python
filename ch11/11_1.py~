@@ -1,0 +1,17 @@
+import random
+
+
+
+def makedict(file):
+
+    fin = open(file)
+    myDict = {}
+    
+    for line in fin:
+        word = line.strip()
+        myDict[word] = random.randint(1,100)
+
+    return myDict
+
+
+print(makedict("words.txt"))

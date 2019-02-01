@@ -1,0 +1,33 @@
+def histogram(s):
+    d = {}
+
+    for letter in s:
+        temp = d.get(letter, 0)
+        d[letter] = temp + 1
+    return d
+
+
+def most_frequent(s):
+    
+    dict = histogram(s)
+    
+    t = []
+    for (x, freq) in dict.items():
+        t.append((freq, x))
+    
+    t.sort(reverse = True)
+
+    result = []
+
+    for (freq, x) in t:
+        result.append(x)
+
+    return result
+
+
+
+s = open("words.txt").read()
+t = most_frequent(s)
+
+for x in t:
+    print(x)

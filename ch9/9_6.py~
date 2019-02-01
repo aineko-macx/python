@@ -1,0 +1,28 @@
+
+def is_abecedarian(word):
+
+    for letter in word:
+        index = word.index(letter)
+
+        for i in range(len(word)-index):
+            if ord(letter) < ord(word[index+i]):
+                return False
+    return True
+
+
+
+fin = open("words.txt")
+
+
+
+wordlist = [] 
+
+for line in fin:
+    word = line.strip()
+
+    if is_abecedarian(word):
+        wordlist.append(word)
+print(wordlist)
+print(len(wordlist))
+
+

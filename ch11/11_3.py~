@@ -1,0 +1,15 @@
+def print_hist(h):
+    for c in h:
+        print(c, h[c])
+
+def histogram(s):
+    d = dict()
+    for c in s:
+        temp = d.get(c, 0)
+        d[c] = temp +1
+    return d
+
+
+
+h = histogram('parrot')
+print_hist(h)

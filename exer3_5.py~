@@ -1,0 +1,6 @@
+def print_grid():
+    print("+", "-"*4, "+", "-"*4, "+")
+
+    return
+
+print_grid()

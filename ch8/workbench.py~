@@ -1,0 +1,14 @@
+"""prefixes = 'JKLMNOPQ'
+suffix = 'ack'
+
+
+for letter in prefixes:
+    if letter == 'O' or letter == 'Q':
+        print(letter + 'u' + suffix)
+    else:
+        print(letter + suffix)
+"""
+
+
+for i in range(130):
+    print i, chr(i)

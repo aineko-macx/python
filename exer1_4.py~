@@ -1,0 +1,11 @@
+t = 43.5
+d_km = 10 
+
+d_miles = d_km/1.61
+
+
+pace_km = t/d_km
+
+pace_miles = t/d_miles
+
+print(pace_km, "min/km =", pace_miles)

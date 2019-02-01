@@ -1,0 +1,41 @@
+def avoids(word, string):
+    #print("Does", word, "avoid", string, "?")
+    flag = False
+    for letter in string:
+        #print(letter)
+        if letter in word:
+            #print(letter)
+            flag = False
+            return 
+        else:
+            flag = True
+
+    return flag
+
+
+
+fin = open("words.txt")
+
+
+"""
+usrStr = input("Input string: ")
+wordlist = [] 
+
+for line in fin:
+    word = line.strip()
+
+    if avoids(word, usrStr):
+        wordlist.append(word)
+print(wordlist)
+print(len(wordlist))
+
+
+
+
+print(avoids("catz", "xyz"))
+print(avoids("dog", "xyzg"))
+print(avoids("cat", "abct"))
+print(avoids("quixotic", "xyz"))
+
+
+

@@ -1,0 +1,9 @@
+def sumall(*args):
+    sum = 0
+    for i in args:
+        sum += i
+    return sum
+
+
+print(sumall(1))
+print(sumall(1,2))
