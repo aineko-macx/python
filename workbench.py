@@ -1,4 +1,14 @@
-def countdown(n):
+from swampy.TurtleWorld import*
+
+world = TurtleWorld()
+bob = Turtle()
+print bob
+
+wait_for_user()
+
+
+
+"""def countdown(n):
     if n <= 0:
         print("Blastoff!")
     else:
@@ -18,3 +28,4 @@ def print_n(s, n):
 
 print_n(5, 6)
 
+"""

@@ -1,3 +1,13 @@
+from swampy.Turtleworld import*
+
+world = TurtleWorld()
+bob = Turtle()
+print bob
+
+wait_for_user()
+
+
+
 """def countdown(n):
     if n <= 0:
         print("Blastoff!")
@@ -19,19 +29,3 @@ def print_n(s, n):
 print_n(5, 6)
 
 """
-
-
-
-#python3 input
-"""
-test = input("test input")
-
-print(test)
-"""
-
-
-#python2 input
-
-test = raw_input("test input: ")
-
-print test
